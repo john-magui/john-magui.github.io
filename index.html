@@ -1,0 +1,1836 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蚂蚁磁力搜索官网_资源检索品牌_开放内容生态影像社区</title>
+<meta name="description" content="蚂蚁磁力搜索官方网站，企业级资源检索与影像内容品牌，专注原创高清内容生态，汇聚创作者与社区力量，打造值得信赖的检索与观看平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2b3a'/%3E%3Ccircle cx='28' cy='28' r='13' fill='none' stroke='%23ffb020' stroke-width='5'/%3E%3Cline x1='38' y1='38' x2='52' y2='52' stroke='%23ffb020' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='28' cy='28' r='5' fill='%23ffb020'/%3E%3C/svg%3E">
+<style>
+:root{
+  --mgs-ink:#12202e;
+  --mgs-ink-soft:#3b4f63;
+  --mgs-deep:#1c2b3a;
+  --mgs-accent:#ff8a1f;
+  --mgs-accent-2:#ffb020;
+  --mgs-teal:#1a8f8a;
+  --mgs-paper:#f7f5f1;
+  --mgs-card:#ffffff;
+  --mgs-line:#e2ded7;
+  --mgs-shadow:0 12px 32px rgba(18,32,46,.10);
+  --mgs-radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--mgs-paper);
+  color:var(--mgs-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input{font-family:inherit;}
+
+/* ===== 吸顶容器 ===== */
+.mgs-sticky-shell{
+  position:sticky;
+  top:0;
+  z-index:900;
+  box-shadow:0 4px 18px rgba(18,32,46,.08);
+}
+/* 公告条 */
+.mgs-announce{
+  background:linear-gradient(90deg,var(--mgs-deep),#2b4055 60%,#1f3448);
+  color:#e9eef3;
+  font-size:13.5px;
+  padding:8px 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  overflow:hidden;
+}
+.mgs-announce-tag{
+  flex:0 0 auto;
+  background:var(--mgs-accent);
+  color:#1c1408;
+  font-weight:700;
+  font-size:12px;
+  padding:2px 10px;
+  border-radius:999px;
+  letter-spacing:.5px;
+}
+.mgs-announce-track{
+  display:flex;
+  gap:48px;
+  white-space:nowrap;
+  animation:mgsMarquee 26s linear infinite;
+}
+.mgs-announce-track span{opacity:.92;}
+@keyframes mgsMarquee{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+/* 页头 */
+.mgs-header{
+  background:rgba(247,245,241,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--mgs-line);
+}
+.mgs-header-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.mgs-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:0 0 auto;
+}
+.mgs-brand-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(140deg,var(--mgs-deep),#2f4a63);
+  display:grid;place-items:center;
+  color:var(--mgs-accent-2);
+  font-weight:800;font-size:19px;
+  box-shadow:inset 0 0 0 2px rgba(255,176,32,.35);
+}
+.mgs-brand-text b{font-size:18px;letter-spacing:.5px;display:block;line-height:1.2;}
+.mgs-brand-text small{font-size:11.5px;color:var(--mgs-ink-soft);letter-spacing:1.5px;}
+.mgs-nav{
+  display:flex;
+  gap:4px;
+  flex:1 1 auto;
+  flex-wrap:wrap;
+}
+.mgs-nav a{
+  font-size:14.5px;
+  padding:8px 13px;
+  border-radius:9px;
+  color:var(--mgs-ink-soft);
+  transition:.22s;
+  white-space:nowrap;
+}
+.mgs-nav a:hover,.mgs-nav a.mgs-nav-on{
+  background:#fff;
+  color:var(--mgs-deep);
+  box-shadow:0 3px 10px rgba(18,32,46,.08);
+}
+.mgs-search{
+  position:relative;
+  flex:0 0 250px;
+}
+.mgs-search input{
+  width:100%;
+  padding:10px 40px 10px 14px;
+  border-radius:999px;
+  border:1px solid var(--mgs-line);
+  background:#fff;
+  font-size:13.5px;
+  outline:none;
+  transition:.22s;
+}
+.mgs-search input:focus{border-color:var(--mgs-accent);box-shadow:0 0 0 3px rgba(255,138,31,.16);}
+.mgs-search button{
+  position:absolute;right:5px;top:50%;transform:translateY(-50%);
+  width:30px;height:30px;border-radius:50%;
+  background:var(--mgs-accent);
+  color:#fff;font-size:14px;
+  display:grid;place-items:center;
+}
+.mgs-search-hint{
+  position:absolute;
+  top:calc(100% + 8px);
+  left:0;right:0;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:var(--mgs-shadow);
+  padding:10px 14px;
+  font-size:13px;
+  color:var(--mgs-ink-soft);
+  display:none;
+  z-index:50;
+}
+.mgs-search-hint.mgs-open{display:block;}
+.mgs-nav-toggle{
+  display:none;
+  width:42px;height:42px;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 3px 10px rgba(18,32,46,.08);
+  font-size:18px;
+  flex:0 0 auto;
+}
+
+/* ===== 通用容器 ===== */
+.mgs-wrap{max-width:1240px;margin:0 auto;padding:0 22px;}
+.mgs-section{padding:64px 0;scroll-margin-top:118px;}
+.mgs-section-alt{background:#fff;border-top:1px solid var(--mgs-line);border-bottom:1px solid var(--mgs-line);}
+.mgs-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:2px;
+  color:var(--mgs-accent);
+  font-weight:700;
+  text-transform:uppercase;
+}
+.mgs-eyebrow::before{content:"";width:22px;height:2px;background:var(--mgs-accent);border-radius:2px;}
+.mgs-h2{
+  font-size:30px;
+  line-height:1.3;
+  margin:10px 0 8px;
+  letter-spacing:.5px;
+}
+.mgs-sub{color:var(--mgs-ink-soft);font-size:15px;max-width:760px;}
+.mgs-section-head{margin-bottom:32px;}
+
+/* ===== 首屏 ===== */
+.mgs-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(255,138,31,.16),transparent 45%),
+    radial-gradient(circle at 6% 88%,rgba(26,143,138,.14),transparent 46%),
+    linear-gradient(150deg,#f7f5f1 0%,#eef2f0 100%);
+  padding:58px 0 66px;
+  scroll-margin-top:118px;
+}
+.mgs-hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:46px;
+  align-items:center;
+}
+.mgs-hero h1{
+  font-size:46px;
+  line-height:1.16;
+  letter-spacing:1px;
+  margin:14px 0 10px;
+}
+.mgs-hero h1 em{
+  font-style:normal;
+  color:var(--mgs-accent);
+  position:relative;
+}
+.mgs-hero-tag{
+  font-size:16px;
+  color:var(--mgs-teal);
+  font-weight:600;
+  letter-spacing:1px;
+}
+.mgs-hero-desc{
+  margin-top:16px;
+  color:var(--mgs-ink-soft);
+  font-size:15.5px;
+  max-width:560px;
+}
+.mgs-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.mgs-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;
+  border-radius:12px;
+  font-size:14.5px;font-weight:600;
+  transition:.22s;
+}
+.mgs-btn-main{
+  background:linear-gradient(135deg,var(--mgs-accent),var(--mgs-accent-2));
+  color:#241605;
+  box-shadow:0 10px 22px rgba(255,138,31,.34);
+}
+.mgs-btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(255,138,31,.42);}
+.mgs-btn-ghost{
+  background:#fff;color:var(--mgs-deep);
+  border:1px solid var(--mgs-line);
+}
+.mgs-btn-ghost:hover{border-color:var(--mgs-accent);color:var(--mgs-accent);}
+.mgs-hero-stats{
+  display:flex;gap:30px;flex-wrap:wrap;margin-top:32px;
+}
+.mgs-hero-stats div b{
+  font-size:26px;color:var(--mgs-deep);
+  display:block;line-height:1.2;
+  letter-spacing:.5px;
+}
+.mgs-hero-stats div span{font-size:12.5px;color:var(--mgs-ink-soft);}
+.mgs-hero-visual{position:relative;}
+.mgs-hero-frame{
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 26px 60px rgba(18,32,46,.22);
+  border:6px solid #fff;
+  background:#fff;
+}
+.mgs-hero-frame img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+.mgs-hero-badge{
+  position:absolute;
+  left:-16px;bottom:26px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:var(--mgs-shadow);
+  padding:12px 16px;
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;
+}
+.mgs-hero-badge b{color:var(--mgs-teal);font-size:16px;}
+.mgs-hero-badge .mgs-dot{width:9px;height:9px;border-radius:50%;background:var(--mgs-teal);box-shadow:0 0 0 4px rgba(26,143,138,.16);}
+
+/* ===== 深度解析长文 ===== */
+.mgs-about-card{
+  background:#fff;
+  border-radius:var(--mgs-radius);
+  padding:38px 42px;
+  box-shadow:var(--mgs-shadow);
+  border:1px solid var(--mgs-line);
+}
+.mgs-about-card h3{
+  font-size:19.5px;
+  margin:26px 0 10px;
+  color:var(--mgs-deep);
+  padding-left:14px;
+  border-left:4px solid var(--mgs-accent);
+}
+.mgs-about-card h3:first-child{margin-top:0;}
+.mgs-about-card p{
+  font-size:15px;
+  color:var(--mgs-ink-soft);
+  margin-bottom:12px;
+  text-align:justify;
+}
+.mgs-about-card strong{color:var(--mgs-deep);}
+.mgs-keyword-pill{
+  display:inline-block;
+  background:rgba(255,138,31,.12);
+  color:#a8560a;
+  font-weight:600;
+  padding:1px 8px;
+  border-radius:6px;
+  font-size:13.5px;
+}
+
+/* ===== 视频卡片 ===== */
+.mgs-video-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.mgs-video-card{
+  background:#fff;
+  border-radius:var(--mgs-radius);
+  overflow:hidden;
+  border:1px solid var(--mgs-line);
+  transition:.28s;
+  display:flex;flex-direction:column;
+}
+.mgs-video-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(18,32,46,.15);border-color:#f3d9be;}
+.mgs-cover{
+  position:relative;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#dfe6ec;
+}
+.mgs-cover img{width:100%;height:100%;object-fit:cover;transition:.4s;}
+.mgs-video-card:hover .mgs-cover img{transform:scale(1.05);}
+.mgs-cover-tag{
+  position:absolute;top:10px;left:10px;
+  background:rgba(18,32,46,.82);
+  color:#fff;
+  font-size:11.5px;
+  padding:3px 9px;
+  border-radius:999px;
+  letter-spacing:.5px;
+}
+.mgs-cover-play{
+  position:absolute;right:10px;bottom:10px;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,138,31,.94);
+  display:grid;place-items:center;
+  color:#fff;font-size:13px;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+.mgs-cover-dur{
+  position:absolute;right:10px;top:10px;
+  background:rgba(18,32,46,.82);
+  color:#fff;font-size:11.5px;
+  padding:2px 8px;border-radius:6px;
+}
+.mgs-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1;}
+.mgs-video-body h3{font-size:16px;line-height:1.45;margin-bottom:8px;}
+.mgs-video-body h3 a:hover{color:var(--mgs-accent);}
+.mgs-video-body p{
+  font-size:13px;color:var(--mgs-ink-soft);
+  flex:1;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.mgs-video-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:12px;font-size:12.5px;color:var(--mgs-ink-soft);
+  gap:8px;
+}
+.mgs-video-author{display:flex;align-items:center;gap:7px;}
+.mgs-avatar{
+  width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:#fff;
+  flex:0 0 auto;
+}
+.mgs-avatar-a{background:linear-gradient(135deg,#1a8f8a,#38c1b4);}
+.mgs-avatar-b{background:linear-gradient(135deg,#ff8a1f,#ffb020);color:#3a2405;}
+.mgs-avatar-c{background:linear-gradient(135deg,#2f4a63,#5b7fa0);}
+.mgs-avatar-d{background:linear-gradient(135deg,#a8560a,#d99a4e);}
+.mgs-avatar-e{background:linear-gradient(135deg,#4d5b8a,#7a8cc0);}
+.mgs-avatar-f{background:linear-gradient(135deg,#0f6b67,#1a8f8a);}
+.mgs-card-actions{display:flex;gap:6px;align-items:center;}
+.mgs-act{
+  font-size:12.5px;
+  padding:4px 9px;
+  border-radius:8px;
+  background:#f4f1ec;
+  color:var(--mgs-ink-soft);
+  transition:.2s;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.mgs-act:hover{background:#efe2d3;color:#a8560a;}
+.mgs-act.mgs-like-on{background:rgba(255,138,31,.16);color:#b85f0c;font-weight:700;}
+.mgs-act.mgs-fav-on{background:rgba(26,143,138,.14);color:#0f6b67;font-weight:700;}
+
+/* 焦点双卡 */
+.mgs-focus-grid{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:24px;
+  margin-bottom:24px;
+}
+.mgs-focus-main{
+  position:relative;
+  border-radius:var(--mgs-radius);
+  overflow:hidden;
+  min-height:340px;
+  display:flex;
+  align-items:flex-end;
+  box-shadow:var(--mgs-shadow);
+}
+.mgs-focus-main img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
+.mgs-focus-main::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(18,32,46,.05) 30%,rgba(18,32,46,.88));
+}
+.mgs-focus-main-inner{position:relative;z-index:2;padding:28px 30px;color:#fff;}
+.mgs-focus-main-inner span{
+  background:var(--mgs-accent);color:#241605;
+  font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;
+}
+.mgs-focus-main-inner h3{font-size:23px;margin:12px 0 8px;line-height:1.35;}
+.mgs-focus-main-inner p{font-size:13.5px;opacity:.86;max-width:520px;}
+.mgs-focus-side{display:flex;flex-direction:column;gap:20px;}
+.mgs-focus-side .mgs-video-card{flex:1;}
+
+/* ===== 专题 ===== */
+.mgs-topic-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.mgs-topic{
+  background:#fff;
+  border-radius:var(--mgs-radius);
+  padding:22px 20px;
+  border:1px solid var(--mgs-line);
+  transition:.26s;
+  position:relative;
+  overflow:hidden;
+}
+.mgs-topic::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,var(--mgs-accent),var(--mgs-teal));
+  opacity:0;transition:.3s;
+}
+.mgs-topic:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(18,32,46,.12);}
+.mgs-topic:hover::before{opacity:1;}
+.mgs-topic-idx{font-size:12px;color:var(--mgs-accent);font-weight:800;letter-spacing:1px;}
+.mgs-topic h3{font-size:16.5px;margin:6px 0 8px;line-height:1.4;}
+.mgs-topic p{font-size:13px;color:var(--mgs-ink-soft);}
+.mgs-topic-status{
+  margin-top:14px;font-size:12px;color:var(--mgs-teal);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.mgs-topic-status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mgs-teal);}
+
+/* ===== 创作者 ===== */
+.mgs-creator-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.mgs-creator{
+  background:#fff;
+  border-radius:var(--mgs-radius);
+  padding:24px 20px;
+  border:1px solid var(--mgs-line);
+  text-align:center;
+  transition:.26s;
+}
+.mgs-creator:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(18,32,46,.13);}
+.mgs-creator .mgs-avatar{width:58px;height:58px;font-size:22px;margin:0 auto 12px;}
+.mgs-creator h3{font-size:16px;margin-bottom:4px;}
+.mgs-creator .mgs-role{font-size:12.5px;color:var(--mgs-accent);font-weight:600;}
+.mgs-creator p{font-size:12.8px;color:var(--mgs-ink-soft);margin:10px 0 12px;line-height:1.6;}
+.mgs-creator-stats{display:flex;justify-content:center;gap:16px;font-size:12px;color:var(--mgs-ink-soft);}
+.mgs-creator-stats b{display:block;color:var(--mgs-deep);font-size:14.5px;}
+.mgs-creator-btn{
+  margin-top:14px;width:100%;
+  padding:8px 0;border-radius:9px;
+  background:#f4f1ec;font-size:13px;color:var(--mgs-ink-soft);
+  transition:.2s;
+}
+.mgs-creator-btn:hover{background:var(--mgs-deep);color:#fff;}
+
+/* ===== 影像墙 ===== */
+.mgs-wall{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:120px;
+  gap:14px;
+}
+.mgs-wall-item{
+  position:relative;overflow:hidden;border-radius:14px;
+  cursor:pointer;
+}
+.mgs-wall-item img{width:100%;height:100%;object-fit:cover;transition:.45s;}
+.mgs-wall-item:hover img{transform:scale(1.07);}
+.mgs-wall-item::after{
+  content:attr(data-label);
+  position:absolute;left:0;right:0;bottom:0;
+  padding:20px 12px 9px;
+  font-size:12px;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(18,32,46,.85));
+  opacity:0;transition:.3s;
+}
+.mgs-wall-item:hover::after{opacity:1;}
+.mgs-w-big{grid-column:span 3;grid-row:span 2;}
+.mgs-w-mid{grid-column:span 2;grid-row:span 1;}
+.mgs-w-sm{grid-column:span 1;grid-row:span 1;}
+
+/* ===== 评论 ===== */
+.mgs-review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.mgs-review{
+  background:#fff;border-radius:var(--mgs-radius);
+  padding:22px;border:1px solid var(--mgs-line);
+  position:relative;
+}
+.mgs-review::before{
+  content:"“";position:absolute;right:18px;top:0;
+  font-size:64px;color:rgba(255,138,31,.16);
+  font-family:Georgia,serif;line-height:1;
+}
+.mgs-review p{font-size:13.8px;color:var(--mgs-ink-soft);margin-bottom:16px;position:relative;z-index:1;}
+.mgs-review-user{display:flex;align-items:center;gap:10px;}
+.mgs-review-user b{font-size:13.5px;display:block;}
+.mgs-review-user small{font-size:11.5px;color:var(--mgs-ink-soft);}
+
+/* ===== 数据榜单 ===== */
+.mgs-rank-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+.mgs-rank-box{
+  background:#fff;border-radius:var(--mgs-radius);
+  padding:26px 26px 18px;border:1px solid var(--mgs-line);
+}
+.mgs-rank-box h3{font-size:17px;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.mgs-rank-box h3 span{font-size:12px;color:var(--mgs-accent);font-weight:700;}
+.mgs-rank-list li{
+  display:flex;align-items:center;gap:12px;
+  padding:11px 0;border-bottom:1px dashed var(--mgs-line);
+  font-size:14px;
+}
+.mgs-rank-list li:last-child{border-bottom:none;}
+.mgs-rank-no{
+  width:24px;height:24px;border-radius:7px;
+  background:#f4f1ec;color:var(--mgs-ink-soft);
+  font-size:12px;font-weight:800;
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.mgs-rank-list li:nth-child(1) .mgs-rank-no{background:var(--mgs-accent);color:#fff;}
+.mgs-rank-list li:nth-child(2) .mgs-rank-no{background:var(--mgs-accent-2);color:#3a2405;}
+.mgs-rank-list li:nth-child(3) .mgs-rank-no{background:#c7d3dc;color:var(--mgs-deep);}
+.mgs-rank-list li b{flex:1;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mgs-rank-list li em{font-style:normal;font-size:12.5px;color:var(--mgs-accent);font-weight:700;}
+
+/* ===== 企业动态 ===== */
+.mgs-news-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.mgs-news{
+  background:#fff;border-radius:var(--mgs-radius);
+  padding:22px 24px;border:1px solid var(--mgs-line);
+  transition:.24s;
+}
+.mgs-news:hover{box-shadow:0 14px 30px rgba(18,32,46,.10);transform:translateY(-3px);}
+.mgs-news time{font-size:12px;color:var(--mgs-accent);font-weight:700;letter-spacing:.5px;}
+.mgs-news h3{font-size:15.5px;margin:7px 0 7px;line-height:1.45;}
+.mgs-news p{font-size:13px;color:var(--mgs-ink-soft);}
+
+/* ===== 合作伙伴 ===== */
+.mgs-partner-row{
+  display:flex;flex-wrap:wrap;gap:14px;
+}
+.mgs-partner{
+  flex:1 1 150px;
+  background:#fff;border:1px solid var(--mgs-line);
+  border-radius:12px;padding:18px 12px;text-align:center;
+  font-size:14px;font-weight:600;color:var(--mgs-ink-soft);
+  transition:.24s;
+}
+.mgs-partner:hover{border-color:var(--mgs-accent);color:var(--mgs-accent);background:#fffaf4;}
+
+/* ===== FAQ ===== */
+.mgs-faq{max-width:900px;margin:0 auto;}
+.mgs-faq details{
+  background:#fff;border:1px solid var(--mgs-line);
+  border-radius:12px;margin-bottom:12px;overflow:hidden;
+  transition:.2s;
+}
+.mgs-faq details[open]{border-color:rgba(255,138,31,.55);box-shadow:0 10px 24px rgba(255,138,31,.1);}
+.mgs-faq summary{
+  list-style:none;cursor:pointer;
+  padding:16px 20px;font-size:15px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.mgs-faq summary::-webkit-details-marker{display:none;}
+.mgs-faq summary::after{content:"+";font-size:20px;color:var(--mgs-accent);font-weight:400;transition:.2s;}
+.mgs-faq details[open] summary::after{content:"−";}
+.mgs-faq details p{
+  padding:0 20px 18px;font-size:13.8px;color:var(--mgs-ink-soft);
+}
+
+/* ===== 联系 & 投稿 ===== */
+.mgs-cta{
+  background:linear-gradient(135deg,var(--mgs-deep),#2b4055);
+  border-radius:22px;
+  padding:48px 44px;
+  color:#e9eef3;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:34px;
+  align-items:center;
+  box-shadow:0 26px 54px rgba(18,32,46,.28);
+}
+.mgs-cta h2{font-size:28px;margin:10px 0 12px;line-height:1.35;}
+.mgs-cta p{font-size:14.5px;opacity:.82;max-width:520px;}
+.mgs-cta .mgs-eyebrow{color:var(--mgs-accent-2);}
+.mgs-cta .mgs-eyebrow::before{background:var(--mgs-accent-2);}
+.mgs-cta-acts{display:flex;flex-direction:column;gap:12px;}
+.mgs-cta-acts .mgs-btn{justify-content:center;}
+.mgs-cta-note{font-size:12.5px;opacity:.6;text-align:center;margin-top:2px;}
+
+/* ===== 页脚 ===== */
+.mgs-footer{
+  background:#0e1a25;
+  color:#a9b8c4;
+  padding:54px 0 26px;
+  margin-top:10px;
+}
+.mgs-footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:34px;
+  margin-bottom:36px;
+}
+.mgs-footer h4{color:#fff;font-size:15px;margin-bottom:14px;letter-spacing:.5px;}
+.mgs-footer p{font-size:13px;line-height:1.8;}
+.mgs-footer ul li{margin-bottom:9px;font-size:13px;}
+.mgs-footer ul li a:hover{color:var(--mgs-accent-2);}
+.mgs-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.mgs-footer-brand .mgs-brand-mark{width:36px;height:36px;font-size:17px;}
+.mgs-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:20px;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
+  font-size:12.5px;color:#7f909d;
+}
+.mgs-footer-bottom a:hover{color:var(--mgs-accent-2);}
+
+/* 回到顶部 */
+.mgs-top-btn{
+  position:fixed;right:22px;bottom:26px;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--mgs-deep);color:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 10px 24px rgba(18,32,46,.3);
+  opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:.28s;z-index:800;font-size:16px;
+}
+.mgs-top-btn.mgs-show{opacity:1;pointer-events:auto;transform:translateY(0);}
+.mgs-top-btn:hover{background:var(--mgs-accent);color:#241605;}
+
+/* Toast */
+.mgs-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:rgba(18,32,46,.94);color:#fff;
+  padding:11px 22px;border-radius:999px;font-size:13.5px;
+  opacity:0;pointer-events:none;transition:.3s;z-index:1000;
+  box-shadow:0 10px 26px rgba(0,0,0,.3);
+}
+.mgs-toast.mgs-show{opacity:1;transform:translate(-50%,0);}
+
+/* 模态框 */
+.mgs-modal{
+  position:fixed;inset:0;z-index:1100;
+  background:rgba(12,22,32,.62);
+  display:none;align-items:center;justify-content:center;
+  padding:22px;
+}
+.mgs-modal.mgs-open{display:flex;}
+.mgs-modal-box{
+  background:#fff;border-radius:18px;
+  max-width:520px;width:100%;
+  padding:28px 28px 24px;
+  box-shadow:0 30px 70px rgba(0,0,0,.35);
+  max-height:86vh;overflow:auto;
+}
+.mgs-modal-box h3{font-size:19px;margin-bottom:16px;}
+.mgs-modal-box label{display:block;font-size:13px;color:var(--mgs-ink-soft);margin:12px 0 6px;font-weight:600;}
+.mgs-modal-box input,.mgs-modal-box textarea,.mgs-modal-box select{
+  width:100%;padding:10px 12px;border-radius:10px;
+  border:1px solid var(--mgs-line);font-size:14px;outline:none;
+  background:#faf9f7;font-family:inherit;
+}
+.mgs-modal-box input:focus,.mgs-modal-box textarea:focus,.mgs-modal-box select:focus{
+  border-color:var(--mgs-accent);box-shadow:0 0 0 3px rgba(255,138,31,.14);
+}
+.mgs-modal-acts{display:flex;gap:10px;margin-top:20px;}
+.mgs-modal-acts .mgs-btn{flex:1;justify-content:center;}
+.mgs-modal-close{
+  float:right;width:30px;height:30px;border-radius:50%;
+  background:#f4f1ec;display:grid;place-items:center;font-size:15px;
+  color:var(--mgs-ink-soft);
+}
+.mgs-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;}
+.mgs-share-row button{
+  padding:9px 16px;border-radius:10px;background:#f4f1ec;
+  font-size:13px;color:var(--mgs-ink-soft);transition:.2s;
+}
+.mgs-share-row button:hover{background:var(--mgs-deep);color:#fff;}
+
+/* 作者弹窗内信息 */
+.mgs-author-head{display:flex;gap:16px;align-items:center;margin-bottom:16px;}
+.mgs-author-head .mgs-avatar{width:66px;height:66px;font-size:25px;}
+.mgs-author-head h3{margin-bottom:4px;}
+.mgs-author-head small{color:var(--mgs-accent);font-weight:600;font-size:13px;}
+.mgs-author-desc{font-size:14px;color:var(--mgs-ink-soft);line-height:1.8;}
+
+/* 响应式 */
+@media(max-width:1080px){
+  .mgs-hero-grid{grid-template-columns:1fr;}
+  .mgs-hero h1{font-size:38px;}
+  .mgs-video-grid{grid-template-columns:repeat(2,1fr);}
+  .mgs-topic-grid{grid-template-columns:repeat(2,1fr);}
+  .mgs-creator-grid{grid-template-columns:repeat(2,1fr);}
+  .mgs-review-grid{grid-template-columns:repeat(2,1fr);}
+  .mgs-footer-grid{grid-template-columns:1fr 1fr;}
+  .mgs-cta{grid-template-columns:1fr;padding:34px 26px;}
+  .mgs-focus-grid{grid-template-columns:1fr;}
+  .mgs-rank-layout{grid-template-columns:1fr;}
+  .mgs-news-grid{grid-template-columns:1fr;}
+  .mgs-wall{grid-template-columns:repeat(4,1fr);}
+  .mgs-w-big{grid-column:span 2;}
+  .mgs-w-mid{grid-column:span 2;}
+  .mgs-w-sm{grid-column:span 1;}
+}
+@media(max-width:880px){
+  .mgs-nav{
+    display:none;
+    position:absolute;
+    top:100%;left:0;right:0;
+    background:#fff;
+    flex-direction:column;
+    padding:10px 16px 16px;
+    box-shadow:0 16px 30px rgba(18,32,46,.14);
+    border-radius:0 0 16px 16px;
+  }
+  .mgs-nav.mgs-nav-open{display:flex;}
+  .mgs-header-inner{position:relative;flex-wrap:wrap;}
+  .mgs-nav-toggle{display:grid;place-items:center;order:3;}
+  .mgs-search{order:4;flex:1 1 100%;margin-top:8px;}
+  .mgs-brand{flex:1 1 auto;}
+}
+@media(max-width:680px){
+  .mgs-hero h1{font-size:30px;}
+  .mgs-h2{font-size:24px;}
+  .mgs-video-grid{grid-template-columns:1fr;}
+  .mgs-topic-grid{grid-template-columns:1fr;}
+  .mgs-creator-grid{grid-template-columns:1fr;}
+  .mgs-review-grid{grid-template-columns:1fr;}
+  .mgs-footer-grid{grid-template-columns:1fr;}
+  .mgs-about-card{padding:24px 20px;}
+  .mgs-hero-stats{gap:18px;}
+  .mgs-hero-stats div b{font-size:22px;}
+  .mgs-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px;}
+  .mgs-w-big{grid-column:span 2;grid-row:span 2;}
+  .mgs-w-mid{grid-column:span 1;}
+  .mgs-section{padding:48px 0;}
+  .mgs-announce-track{gap:30px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="mgs-sticky-shell">
+  <div class="mgs-announce" role="region" aria-label="官网公告">
+    <span class="mgs-announce-tag">官网公告</span>
+    <div class="mgs-announce-track">
+      <span>11·19 更新：品牌索引库新增「城市影像」合辑 128 条，支持创作者一键投稿</span>
+      <span>「蚂蚁磁力搜索」创作者招募计划第 7 期报名开放，评审周期 5 个工作日</span>
+      <span>高清片单页已升级：支持按地域、时长、题材三维筛选</span>
+      <span>11·19 更新：品牌索引库新增「城市影像」合辑 128 条，支持创作者一键投稿</span>
+      <span>「蚂蚁磁力搜索」创作者招募计划第 7 期报名开放，评审周期 5 个工作日</span>
+      <span>高清片单页已升级：支持按地域、时长、题材三维筛选</span>
+    </div>
+  </div>
+  <header class="mgs-header">
+    <div class="mgs-header-inner">
+      <a class="mgs-brand" href="#mgs-home" aria-label="蚂蚁磁力搜索官网首页">
+        <span class="mgs-brand-mark">蚂</span>
+        <span class="mgs-brand-text">
+          <b>蚂蚁磁力搜索</b>
+          <small>ANT SEARCH VIDEO</small>
+        </span>
+      </a>
+      <nav class="mgs-nav" id="mgsNav" aria-label="主导航">
+        <a href="#mgs-home" class="mgs-nav-on">首页</a>
+        <a href="#mgs-focus">焦点影像</a>
+        <a href="#mgs-topics">专题企划</a>
+        <a href="#mgs-creators">创作者</a>
+        <a href="#mgs-wall">影像墙</a>
+        <a href="#mgs-news">企业动态</a>
+        <a href="#mgs-faq">帮助</a>
+        <a href="#mgs-contact">联系</a>
+      </nav>
+      <div class="mgs-search">
+        <input type="text" id="mgsSearchInput" placeholder="搜索片单 / 创作者 / 专题" aria-label="站内搜索">
+        <button type="button" id="mgsSearchBtn" aria-label="搜索">⌕</button>
+        <div class="mgs-search-hint" id="mgsSearchHint"></div>
+      </div>
+      <button class="mgs-nav-toggle" id="mgsNavToggle" aria-label="展开导航" aria-expanded="false">☰</button>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="mgs-hero" id="mgs-home">
+  <div class="mgs-wrap">
+    <div class="mgs-hero-grid">
+      <div>
+        <span class="mgs-eyebrow">Brand Official Website</span>
+        <p class="mgs-hero-tag">蚂蚁磁力搜索 · 品牌官方网站</p>
+        <h1>蚂蚁磁力搜索<em>官网</em></h1>
+        <p class="mgs-hero-desc">
+          作为深耕资源检索与影像内容领域的品牌，蚂蚁磁力搜索致力于搭建高品质、正版、原创的内容生态，
+          让每一次检索都通向可信赖的画面与故事。
+        </p>
+        <div class="mgs-hero-actions">
+          <a href="#mgs-focus" class="mgs-btn mgs-btn-main">进入焦点影像 →</a>
+          <a href="#mgs-topics" class="mgs-btn mgs-btn-ghost">浏览专题企划</a>
+          <a href="#mgs-contact" class="mgs-btn mgs-btn-ghost">创作者投稿</a>
+        </div>
+        <div class="mgs-hero-stats">
+          <div><b data-mgs-count="38600">0</b><span>高清片单收录</span></div>
+          <div><b data-mgs-count="1260">0</b><span>签约创作者</span></div>
+          <div><b data-mgs-count="96">0</b><span>城市影像专题</span></div>
+        </div>
+      </div>
+      <div class="mgs-hero-visual">
+        <div class="mgs-hero-frame">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231c2b3a'/%3E%3Cstop offset='1' stop-color='%232f4a63'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffb020'/%3E%3Cstop offset='1' stop-color='%23ff8a1f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g1)'/%3E%3Ccircle cx='640' cy='120' r='150' fill='%23ff8a1f' opacity='0.10'/%3E%3Ccircle cx='160' cy='420' r='190' fill='%231a8f8a' opacity='0.12'/%3E%3Cg stroke='%23ffb020' stroke-width='6' fill='none' opacity='0.9'%3E%3Ccircle cx='400' cy='240' r='86'/%3E%3Cline x1='462' y1='302' x2='556' y2='396' stroke-linecap='round' stroke-width='14'/%3E%3C/g%3E%3Ccircle cx='400' cy='240' r='34' fill='url(%23g2)'/%3E%3Cg fill='%23ffffff' opacity='0.5'%3E%3Crect x='60' y='60' width='96' height='8' rx='4'/%3E%3Crect x='60' y='84' width='140' height='8' rx='4'/%3E%3Crect x='60' y='108' width='70' height='8' rx='4'/%3E%3C/g%3E%3Cg fill='%23ffb020' opacity='0.8'%3E%3Ccircle cx='92' cy='446' r='7'/%3E%3Ccircle cx='128' cy='446' r='7'/%3E%3Ccircle cx='164' cy='446' r='7'/%3E%3C/g%3E%3C/svg%3E" alt="蚂蚁磁力搜索官网品牌主视觉：深蓝底色上的橙色检索镜与影像符号">
+        </div>
+        <div class="mgs-hero-badge">
+          <span class="mgs-dot"></span>
+          <span>品牌索引库实时同步 · <b id="mgsSyncNum">38613</b> 条</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 品牌解析长文 -->
+<section class="mgs-section" id="mgs-about">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Brand Insight</span>
+      <h2 class="mgs-h2">蚂蚁磁力搜索是什么：一次关于检索与影像的品牌解析</h2>
+      <p class="mgs-sub">我们把「找得到」与「看得好」放在同一张桌子上讨论——这是蚂蚁磁力搜索官方网站持续在做的事。</p>
+    </div>
+    <div class="mgs-about-card">
+      <h3>一、从检索出发：一只蚂蚁如何搬运整片森林</h3>
+      <p>
+        <span class="mgs-keyword-pill">蚂蚁磁力搜索</span>这个名字里藏着两个关键意象：「蚂蚁」代表微小、持续、群体协作的力量，「磁力」代表吸附、聚拢与精准定位的可能。品牌从创立第一天起，就没有把自己定义为简单的索引工具，而是一个<strong>由创作者、策划者与观众共同维护的内容生态</strong>。在蚂蚁磁力搜索官网上，每一条片单都带着来源说明、题材标签与创作者档案，用户可以顺着一条线索继续往下走，而不是停在一次点击里。我们相信，检索的终点不该是空白页，而应该是一个个具体的人、具体的城市、具体的故事。
+      </p>
+      <h3>二、内容生态：原创、正版、高清是三条底线</h3>
+      <p>
+        作为一家持续运营的视频品牌，蚂蚁磁力搜索把<strong>原创、正版、高清</strong>写进了平台的审核标准。创作者上传作品后，需经过题材归类、画质校验与版权声明三道流程；平台为通过审核的内容提供统一的播放页面、稳定的码率与自适应清晰度。我们不追求数量上的堆叠，而更看重每一部作品是否有完整的叙事、是否有可被检索的价值。正因如此，蚂蚁磁力搜索的片单库虽然不算最庞大，却在口碑上形成了稳定的正向循环——用户知道，点开这里的任意一条，画质与内容都不会让人失望。
+      </p>
+      <h3>三、社区气质：让创作者被看见，让观众被尊重</h3>
+      <p>
+        在社区建设上，我们采取「轻社交、重内容」的策略。蚂蚁磁力搜索官网为每位创作者提供独立的作者主页，展示擅长领域、作品数量、更新时间与创作手记；观众可以通过收藏、点赞、复制链接分享等方式表达偏好，也可以在评论区留下具体的观后感。平台不设置夸张的榜单刺激，而是用「热度榜」「新人榜」「口碑榜」三个维度，让不同阶段的作品都能获得曝光。我们始终认为，<strong>一个健康的视频社区，应该让认真创作的人得到回报，让认真观看的人得到回应</strong>。
+      </p>
+      <h3>四、技术侧：检索体验是品牌的一部分</h3>
+      <p>
+        对蚂蚁磁力搜索而言，搜索框不是装饰。我们把站内检索拆成「关键词匹配」「标签联想」「专题归集」三层：输入城市名，会同时给出在地影像、创作者与相关专题；输入题材词，会按更新时间与清晰度排序。检索结果页支持按地域、时长、题材三个维度进一步筛选，减少无效翻页。这些看起来朴素的功能，构成了品牌在垂直领域里的<strong>专业感</strong>——用户不需要学习复杂操作，就能找到想看的内容。
+      </p>
+      <h3>五、未来方向：从工具走向文化记录</h3>
+      <p>
+        接下来的一年，蚂蚁磁力搜索会把更多资源投入到「城市影像计划」与「创作者成长陪伴」两个方向。前者以地域为线索，系统性地记录不同城市的生活切面；后者通过工作坊、创作挑战与作品互评，帮助新创作者完成从第一条到第十条的过渡。我们并不急着做最大的平台，而是希望做一个<strong>值得信赖、可以长期相处</strong>的内容社区。如果你也相信影像有记录日常的力量，欢迎在蚂蚁磁力搜索官方网站留下你的第一条作品。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点影像 -->
+<section class="mgs-section mgs-section-alt" id="mgs-focus">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Focus Video</span>
+      <h2 class="mgs-h2">焦点影像：本周值得停留的六个画面</h2>
+      <p class="mgs-sub">由蚂蚁磁力搜索编辑部与创作者共同推荐，覆盖城市探索、手作纪实与生活观察三个方向。</p>
+    </div>
+    <div class="mgs-focus-grid">
+      <article class="mgs-focus-main">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 560'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f3b4a'/%3E%3Cstop offset='1' stop-color='%231a8f8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='560' fill='url(%23f1)'/%3E%3Cg fill='%23ffffff' opacity='0.10'%3E%3Crect x='0' y='380' width='900' height='180'/%3E%3C/g%3E%3Cg stroke='%23ffb020' stroke-width='5' fill='none' opacity='0.85'%3E%3Cpath d='M120 420 L260 300 L380 360 L520 220 L680 300 L800 200'/%3E%3C/g%3E%3Ccircle cx='260' cy='300' r='10' fill='%23ffb020'/%3E%3Ccircle cx='520' cy='220' r='10' fill='%23ffb020'/%3E%3Ccircle cx='800' cy='200' r='10' fill='%23ffb020'/%3E%3Cg fill='%23ffffff' opacity='0.85'%3E%3Crect x='60' y='60' width='180' height='10' rx='5' opacity='0.7'/%3E%3Crect x='60' y='88' width='120' height='10' rx='5' opacity='0.45'/%3E%3C/g%3E%3C/svg%3E" alt="焦点影像封面：城市夜色中的轨迹线与蚂蚁磁力搜索检索光点">
+        <div class="mgs-focus-main-inner">
+          <span>本周主推</span>
+          <h3>沿着地铁 3 号线，记录一座城市入夜后的十二个瞬间</h3>
+          <p>跟随镜头从终点站出发，穿过夜市、旧书店与凌晨的便利店，看一座城市如何慢慢安静下来。</p>
+        </div>
+      </article>
+      <div class="mgs-focus-side">
+        <article class="mgs-video-card">
+          <div class="mgs-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='f2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a8560a'/%3E%3Cstop offset='1' stop-color='%23ffb020'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23f2)'/%3E%3Cg fill='%23ffffff' opacity='0.18'%3E%3Ccircle cx='500' cy='90' r='90'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='4' opacity='0.72' fill='none'%3E%3Crect x='90' y='150' width='180' height='120' rx='12'/%3E%3Cpath d='M120 150 L120 110 L240 110 L240 150'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.9'%3E%3Crect x='90' y='60' width='150' height='10' rx='5' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E" alt="手作纪实封面：暖橙色背景上的木工工具剪影">
+            <span class="mgs-cover-tag">手作纪实</span>
+            <span class="mgs-cover-dur">14:22</span>
+          </div>
+          <div class="mgs-video-body">
+            <h3>一张木桌的七道工序：从选料到上油</h3>
+            <p>木工房主理人老周的完整记录，包含开料、拼板与打磨细节。</p>
+            <div class="mgs-video-meta">
+              <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-b">周</span>老周的木工房</span>
+              <div class="mgs-card-actions">
+                <button class="mgs-act mgs-like" type="button" data-count="286">♡ 286</button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="mgs-video-card">
+          <div class="mgs-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='f3' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%232f4a63'/%3E%3Cstop offset='1' stop-color='%234d5b8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23f3)'/%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.35' fill='none'%3E%3Cpath d='M0 300 Q160 200 320 260 T640 220'/%3E%3Cpath d='M0 330 Q160 240 320 300 T640 260'/%3E%3C/g%3E%3Ccircle cx='470' cy='110' r='52' fill='%23ffb020' opacity='0.85'/%3E%3Cg fill='%23ffffff' opacity='0.8'%3E%3Crect x='60' y='60' width='130' height='9' rx='4.5' opacity='0.6'/%3E%3Crect x='60' y='84' width='90' height='9' rx='4.5' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E" alt="城市探索封面：蓝灰色调的江面与落日，倒影拉长">
+            <span class="mgs-cover-tag">城市探索</span>
+            <span class="mgs-cover-dur">09:48</span>
+          </div>
+          <div class="mgs-video-body">
+            <h3>江边骑行 42 公里：一个人与一条河的下午</h3>
+            <p>用沿途的停顿，记录城市与自然交界处的细节。</p>
+            <div class="mgs-video-meta">
+              <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-c">苏</span>苏野的慢镜头</span>
+              <div class="mgs-card-actions">
+                <button class="mgs-act mgs-like" type="button" data-count="194">♡ 194</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="mgs-video-grid">
+      <article class="mgs-video-card">
+        <div class="mgs-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='v1' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230f6b67'/%3E%3Cstop offset='1' stop-color='%2338c1b4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23v1)'/%3E%3Cg fill='%23ffffff' opacity='0.24'%3E%3Ccircle cx='140' cy='250' r='70'/%3E%3Ccircle cx='220' cy='250' r='70'/%3E%3Ccircle cx='300' cy='250' r='70'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.7' fill='none'%3E%3Crect x='400' y='90' width='160' height='100' rx='10'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.85'%3E%3Crect x='60' y='60' width='110' height='9' rx='4.5' opacity='0.55'/%3E%3C/g%3E%3C/svg%3E" alt="生活观察封面：青绿色背景上的气泡与窗口图形">
+          <span class="mgs-cover-tag">生活观察</span>
+          <span class="mgs-cover-play">▶</span>
+        </div>
+        <div class="mgs-video-body">
+          <h3>一个人住的第 900 天：厨房里的四季</h3>
+          <p>从春天的第一把香椿到冬天的砂锅，做饭是最小的生活仪式。</p>
+          <div class="mgs-video-meta">
+            <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-a">林</span>林小满的日常</span>
+            <div class="mgs-card-actions">
+              <button class="mgs-act mgs-like" type="button" data-count="412">♡ 412</button>
+              <button class="mgs-act mgs-fav" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="mgs-video-card">
+        <div class="mgs-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='v2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d99a4e'/%3E%3Cstop offset='1' stop-color='%238a4a10'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23v2)'/%3E%3Cg fill='%23ffffff' opacity='0.2'%3E%3Cpolygon points='320,60 420,180 220,180'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.6' fill='none'%3E%3Ccircle cx='320' cy='230' r='64'/%3E%3Ccircle cx='320' cy='230' r='98'/%3E%3C/g%3E%3Cg fill='%23ffb020'%3E%3Ccircle cx='320' cy='230' r='14'/%3E%3C/g%3E%3C/svg%3E" alt="经验分享封面：棕色渐变上的同心圆与播放标记">
+          <span class="mgs-cover-tag">经验分享</span>
+          <span class="mgs-cover-play">▶</span>
+        </div>
+        <div class="mgs-video-body">
+          <h3>把视频拍稳的五个土办法：不用稳定器也能用</h3>
+          <p>手机拍摄新人向，包含持机姿势、呼吸节奏与后期补偿。</p>
+          <div class="mgs-video-meta">
+            <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-d">郑</span>郑一帧</span>
+            <div class="mgs-card-actions">
+              <button class="mgs-act mgs-like" type="button" data-count="531">♡ 531</button>
+              <button class="mgs-act mgs-fav" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="mgs-video-card">
+        <div class="mgs-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='v3' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%233b4f63'/%3E%3Cstop offset='1' stop-color='%237a8cc0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23v3)'/%3E%3Cg fill='%23ffffff' opacity='0.85'%3E%3Crect x='70' y='240' width='60' height='80' rx='6' opacity='0.28'/%3E%3Crect x='150' y='200' width='60' height='120' rx='6' opacity='0.42'/%3E%3Crect x='230' y='160' width='60' height='160' rx='6' opacity='0.55'/%3E%3Crect x='310' y='120' width='60' height='200' rx='6' opacity='0.7'/%3E%3C/g%3E%3Cg stroke='%23ffb020' stroke-width='4' fill='none'%3E%3Cpath d='M90 250 L180 210 L270 170 L360 130 L470 150'/%3E%3C/g%3E%3C/svg%3E" alt="深度测评封面：蓝紫色背景上的上升柱状图与趋势线">
+          <span class="mgs-cover-tag">深度测评</span>
+          <span class="mgs-cover-play">▶</span>
+        </div>
+        <div class="mgs-video-body">
+          <h3>三款入门微单横评：谁更适合记录日常</h3>
+          <p>从色彩、对焦、续航三个维度实测，附使用建议。</p>
+          <div class="mgs-video-meta">
+            <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-e">许</span>许工评测</span>
+            <div class="mgs-card-actions">
+              <button class="mgs-act mgs-like" type="button" data-count="367">♡ 367</button>
+              <button class="mgs-act mgs-fav" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="mgs-video-card">
+        <div class="mgs-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='v4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e85d3a'/%3E%3Cstop offset='1' stop-color='%23f5a24b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23v4)'/%3E%3Cg fill='%23ffffff' opacity='0.22'%3E%3Ccircle cx='320' cy='190' r='120'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='4' fill='none' opacity='0.8'%3E%3Cpath d='M120 260 Q220 180 320 220 T520 180'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.9'%3E%3Ccircle cx='120' cy='260' r='9'/%3E%3Ccircle cx='520' cy='180' r='9'/%3E%3C/g%3E%3C/svg%3E" alt="人物访谈封面：橙红色背景上的声波曲线">
+          <span class="mgs-cover-tag">人物访谈</span>
+          <span class="mgs-cover-play">▶</span>
+        </div>
+        <div class="mgs-video-body">
+          <h3>访谈：拍了十年城市记录片，我为什么还在拍</h3>
+          <p>与纪录片导演对谈，聊观察、耐心与镜头里的距离感。</p>
+          <div class="mgs-video-meta">
+            <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-f">编</span>蚂蚁编辑部</span>
+            <div class="mgs-card-actions">
+              <button class="mgs-act mgs-like" type="button" data-count="248">♡ 248</button>
+              <button class="mgs-act mgs-fav" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="mgs-video-card">
+        <div class="mgs-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='v5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b6b3a'/%3E%3Cstop offset='1' stop-color='%2397b06a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23v5)'/%3E%3Cg fill='%23ffffff' opacity='0.18'%3E%3Cpolygon points='320,70 460,300 180,300'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.65' fill='none'%3E%3Cpath d='M100 300 L200 190 L300 250 L420 150 L540 240'/%3E%3C/g%3E%3Cg fill='%23ffb020'%3E%3Ccircle cx='420' cy='150' r='10'/%3E%3C/g%3E%3C/svg%3E" alt="户外活动封面：草绿色背景上的山形与路径线">
+          <span class="mgs-cover-tag">户外活动</span>
+          <span class="mgs-cover-play">▶</span>
+        </div>
+        <div class="mgs-video-body">
+          <h3>周末徒步清单：三条适合新手的近郊路线</h3>
+          <p>含交通、补给与撤退点说明，附拍摄机位建议。</p>
+          <div class="mgs-video-meta">
+            <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-a">何</span>何以远行</span>
+            <div class="mgs-card-actions">
+              <button class="mgs-act mgs-like" type="button" data-count="305">♡ 305</button>
+              <button class="mgs-act mgs-fav" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="mgs-video-card">
+        <div class="mgs-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='v6' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23222b4a'/%3E%3Cstop offset='1' stop-color='%234a5788'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23v6)'/%3E%3Cg fill='%23ffb020' opacity='0.9'%3E%3Ccircle cx='180' cy='180' r='42'/%3E%3Ccircle cx='180' cy='180' r='18' fill='%23222b4a'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2' opacity='0.4' fill='none'%3E%3Ccircle cx='180' cy='180' r='76'/%3E%3Ccircle cx='180' cy='180' r='110'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.8'%3E%3Crect x='330' y='150' width='180' height='10' rx='5' opacity='0.7'/%3E%3Crect x='330' y='180' width='130' height='10' rx='5' opacity='0.45'/%3E%3Crect x='330' y='210' width='160' height='10' rx='5' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E" alt="音乐现场封面：深蓝背景上的唱片与播放光环">
+          <span class="mgs-cover-tag">音乐现场</span>
+          <span class="mgs-cover-play">▶</span>
+        </div>
+        <div class="mgs-video-body">
+          <h3>深夜排练室：一支独立乐队的第 37 次合练</h3>
+          <p>记录一首歌从散乱到成形的过程，包含乐手访谈。</p>
+          <div class="mgs-video-meta">
+            <span class="mgs-video-author"><span class="mgs-avatar mgs-avatar-c">阿</span>阿绿的录音室</span>
+            <div class="mgs-card-actions">
+              <button class="mgs-act mgs-like" type="button" data-count="179">♡ 179</button>
+              <button class="mgs-act mgs-fav" type="button">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 专题企划 -->
+<section class="mgs-section" id="mgs-topics">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Special Projects</span>
+      <h2 class="mgs-h2">专题企划：用一段时间，讲清一件事</h2>
+      <p class="mgs-sub">蚂蚁磁力搜索的专题由编辑部发起，邀请创作者共同完成，持续更新中。</p>
+    </div>
+    <div class="mgs-topic-grid">
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">PROJECT 01</span>
+        <h3>城市影像计划：一百个街角的黄昏</h3>
+        <p>以地域为线索，记录不同城市的黄昏时刻，现有 42 座城市参与。</p>
+        <span class="mgs-topic-status">持续更新中 · 已收录 316 条</span>
+      </div>
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">PROJECT 02</span>
+        <h3>手作人的一天：慢工出细活</h3>
+        <p>走进木工、陶艺、金工与皮具工作室，记录一天的真实节奏。</p>
+        <span class="mgs-topic-status">持续更新中 · 第 3 季筹备</span>
+      </div>
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">PROJECT 03</span>
+        <h3>镜头背后：创作者的自述</h3>
+        <p>由创作者自己讲述一次拍摄的得与失，强调真实经验而非技巧堆砌。</p>
+        <span class="mgs-topic-status">持续更新中 · 已收录 88 条</span>
+      </div>
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">PROJECT 04</span>
+        <h3>检索的意义：内容如何被找到</h3>
+        <p>关于标签、分类与检索体验的行业观察，附带平台方法说明。</p>
+        <span class="mgs-topic-status">已完结 · 共 12 期</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 创作者矩阵 -->
+<section class="mgs-section mgs-section-alt" id="mgs-creators">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Creators</span>
+      <h2 class="mgs-h2">创作者矩阵：让认真拍片的人被看见</h2>
+      <p class="mgs-sub">他们来自不同城市、不同行业，但都在用镜头认真记录。</p>
+    </div>
+    <div class="mgs-creator-grid" id="mgsCreatorGrid">
+      <div class="mgs-creator">
+        <span class="mgs-avatar mgs-avatar-a">林</span>
+        <h3>林小满的日常</h3>
+        <span class="mgs-role">生活观察 / 美食烹饪</span>
+        <p>一个人住，一个人做饭，把厨房四季拍成连续的日常。</p>
+        <div class="mgs-creator-stats">
+          <span><b>128</b>作品</span>
+          <span><b>3.2万</b>关注</span>
+        </div>
+        <button class="mgs-creator-btn mgs-author-btn" type="button"
+          data-name="林小满的日常" data-role="生活观察 / 美食烹饪" data-avatar="林" data-avatarcls="mgs-avatar-a"
+          data-desc="独立生活影像创作者，擅长用固定机位与自然光记录厨房日常，作品强调节奏与呼吸感，已连续更新 900 天。"
+          data-works="128" data-fans="3.2万">查看作者主页</button>
+      </div>
+      <div class="mgs-creator">
+        <span class="mgs-avatar mgs-avatar-b">周</span>
+        <h3>老周的木工房</h3>
+        <span class="mgs-role">手作纪实 / 教程干货</span>
+        <p>木工房主理人，拍工序也拍失误，乐于把细节讲透。</p>
+        <div class="mgs-creator-stats">
+          <span><b>76</b>作品</span>
+          <span><b>1.8万</b>关注</span>
+        </div>
+        <button class="mgs-creator-btn mgs-author-btn" type="button"
+          data-name="老周的木工房" data-role="手作纪实 / 教程干货" data-avatar="周" data-avatarcls="mgs-avatar-b"
+          data-desc="从业二十年的木工，坚持完整记录每件家具的工序，视频里保留失败与返工，希望观众看到真实的手作过程。"
+          data-works="76" data-fans="1.8万">查看作者主页</button>
+      </div>
+      <div class="mgs-creator">
+        <span class="mgs-avatar mgs-avatar-c">苏</span>
+        <h3>苏野的慢镜头</h3>
+        <span class="mgs-role">城市探索 / 户外活动</span>
+        <p>骑车、走路、坐末班车，用慢镜头看城市边缘。</p>
+        <div class="mgs-creator-stats">
+          <span><b>94</b>作品</span>
+          <span><b>2.4万</b>关注</span>
+        </div>
+        <button class="mgs-creator-btn mgs-author-btn" type="button"
+          data-name="苏野的慢镜头" data-role="城市探索 / 户外活动" data-avatar="苏" data-avatarcls="mgs-avatar-c"
+          data-desc="城市探索类创作者，擅长路线型纪录片，常以步行与骑行为线索串联街景，作品多次入选平台焦点影像。"
+          data-works="94" data-fans="2.4万">查看作者主页</button>
+      </div>
+      <div class="mgs-creator">
+        <span class="mgs-avatar mgs-avatar-e">许</span>
+        <h3>许工评测</h3>
+        <span class="mgs-role">深度测评 / 科技前沿</span>
+        <p>器材评测不堆参数，讲清楚「用它拍什么最合适」。</p>
+        <div class="mgs-creator-stats">
+          <span><b>152</b>作品</span>
+          <span><b>4.1万</b>关注</span>
+        </div>
+        <button class="mgs-creator-btn mgs-author-btn" type="button"
+          data-name="许工评测" data-role="深度测评 / 科技前沿" data-avatar="许" data-avatarcls="mgs-avatar-e"
+          data-desc="影像器材评测者，工程背景出身，主张「场景优先于参数」，每期评测都会附带实拍样片与使用建议。"
+          data-works="152" data-fans="4.1万">查看作者主页</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 影像墙 -->
+<section class="mgs-section" id="mgs-wall">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Image Wall</span>
+      <h2 class="mgs-h2">作品墙：社区正在发生的画面</h2>
+      <p class="mgs-sub">来自创作者上传的精选画面，点击可查看对应作品说明。</p>
+    </div>
+    <div class="mgs-wall">
+      <div class="mgs-wall-item mgs-w-big" data-label="雨后的城市天台｜作者：苏野">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23364f6b'/%3E%3Cstop offset='1' stop-color='%2385a3bd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='520' fill='url(%23w1)'/%3E%3Cg fill='%23ffffff' opacity='0.28'%3E%3Crect x='60' y='300' width='120' height='160'/%3E%3Crect x='200' y='250' width='100' height='210'/%3E%3Crect x='320' y='320' width='140' height='140'/%3E%3Crect x='480' y='220' width='110' height='240'/%3E%3Crect x='610' y='290' width='130' height='170'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2' opacity='0.5'%3E%3Cline x1='0' y1='300' x2='800' y2='300'/%3E%3C/g%3E%3Ccircle cx='650' cy='120' r='46' fill='%23ffb020' opacity='0.85'/%3E%3C/svg%3E" alt="影像墙作品：雨后的城市天台与远处楼群轮廓">
+      </div>
+      <div class="mgs-wall-item mgs-w-mid" data-label="木工房里的下午光｜作者：老周">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 360'%3E%3Cdefs%3E%3ClinearGradient id='w2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23b87727'/%3E%3Cstop offset='1' stop-color='%23e8c98a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='360' fill='url(%23w2)'/%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.55' fill='none'%3E%3Cpath d='M80 300 L200 300 M140 300 L140 180 L260 180'/%3E%3Crect x='260' y='120' width='180' height='180' rx='8'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.3'%3E%3Ccircle cx='470' cy='90' r='60'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：暖黄色调的木工房与工具轮廓">
+      </div>
+      <div class="mgs-wall-item mgs-w-sm" data-label="江面晨雾｜作者：何以远行">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='w3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%234a6b7a'/%3E%3Cstop offset='1' stop-color='%23a8c4c9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23w3)'/%3E%3Cg stroke='%23ffffff' stroke-width='2' opacity='0.5'%3E%3Cline x1='30' y1='190' x2='270' y2='190'/%3E%3Cline x1='30' y1='220' x2='270' y2='220'/%3E%3C/g%3E%3Ccircle cx='150' cy='120' r='34' fill='%23ffffff' opacity='0.5'/%3E%3C/svg%3E" alt="影像墙作品：冷蓝色江面晨雾与远处小舟">
+      </div>
+      <div class="mgs-wall-item mgs-w-sm" data-label="厨房窗台｜作者：林小满">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='w4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d9e6cf'/%3E%3Cstop offset='1' stop-color='%238fb07a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23w4)'/%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.65' fill='none'%3E%3Cpath d='M80 220 L80 140 L220 140 L220 220'/%3E%3Cpath d='M110 140 L110 100 L190 100 L190 140'/%3E%3C/g%3E%3Cg fill='%23ffb020'%3E%3Ccircle cx='150' cy='180' r='16'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：绿色调的厨房窗台与玻璃器皿">
+      </div>
+      <div class="mgs-wall-item mgs-w-mid" data-label="排练室的一夜｜作者：阿绿">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 360'%3E%3Cdefs%3E%3ClinearGradient id='w5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231c2b3a'/%3E%3Cstop offset='1' stop-color='%234d5b8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='360' fill='url(%23w5)'/%3E%3Cg fill='%23ffb020' opacity='0.85'%3E%3Ccircle cx='300' cy='180' r='48'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2' opacity='0.4' fill='none'%3E%3Ccircle cx='300' cy='180' r='88'/%3E%3Ccircle cx='300' cy='180' r='128'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.2'%3E%3Crect x='0' y='300' width='600' height='60'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：深色排练室与唱片光环">
+      </div>
+      <div class="mgs-wall-item mgs-w-sm" data-label="山道拐角｜作者：苏野">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='w6' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2390a86d'/%3E%3Cstop offset='1' stop-color='%235b6b3a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23w6)'/%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.5' fill='none'%3E%3Cpath d='M40 250 L120 160 L180 210 L260 120'/%3E%3C/g%3E%3Ccircle cx='220' cy='70' r='24' fill='%23ffb020' opacity='0.9'/%3E%3C/svg%3E" alt="影像墙作品：山道拐角与低垂的云层">
+      </div>
+      <div class="mgs-wall-item mgs-w-sm" data-label="旧书店的灯｜作者：林小满">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='w7' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c9a26a'/%3E%3Cstop offset='1' stop-color='%237a5a30'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23w7)'/%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.55' fill='none'%3E%3Crect x='70' y='100' width='160' height='130' rx='6'/%3E%3Cline x1='150' y1='100' x2='150' y2='230'/%3E%3C/g%3E%3Ccircle cx='150' cy='80' r='20' fill='%23ffb020' opacity='0.85'/%3E%3C/svg%3E" alt="影像墙作品：旧书店窗内的暖灯与书架">
+      </div>
+      <div class="mgs-wall-item mgs-w-sm" data-label="清晨的第一杯｜作者：许工">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='w8' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e8e2d5'/%3E%3Cstop offset='1' stop-color='%23b8a98e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23w8)'/%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='0.7' fill='none'%3E%3Cpath d='M110 120 L110 200 Q110 220 130 220 L170 220 Q190 220 190 200 L190 120 Z'/%3E%3Cpath d='M190 140 Q220 150 190 180'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2' opacity='0.4' fill='none'%3E%3Cpath d='M130 90 Q120 70 130 50'/%3E%3Cpath d='M155 90 Q145 70 155 50'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：清晨的咖啡杯与上升的热气">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 榜单 + 用户评价 -->
+<section class="mgs-section mgs-section-alt" id="mgs-rank">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Ranking & Reviews</span>
+      <h2 class="mgs-h2">数据榜单与真实反馈</h2>
+      <p class="mgs-sub">榜单每周更新，评价来自社区用户的真实留言。</p>
+    </div>
+    <div class="mgs-rank-layout" style="margin-bottom:36px;">
+      <div class="mgs-rank-box">
+        <h3>热度榜 <span>本周</span></h3>
+        <ul class="mgs-rank-list">
+          <li><span class="mgs-rank-no">1</span><b>一个人住的第 900 天：厨房里的四季</b><em>升温 38%</em></li>
+          <li><span class="mgs-rank-no">2</span><b>把视频拍稳的五个土办法</b><em>升温 26%</em></li>
+          <li><span class="mgs-rank-no">3</span><b>沿着地铁 3 号线，记录城市入夜</b><em>升温 21%</em></li>
+          <li><span class="mgs-rank-no">4</span><b>三款入门微单横评</b><em>升温 17%</em></li>
+          <li><span class="mgs-rank-no">5</span><b>周末徒步清单：三条近郊路线</b><em>升温 12%</em></li>
+        </ul>
+      </div>
+      <div class="mgs-rank-box">
+        <h3>新人榜 <span>本月</span></h3>
+        <ul class="mgs-rank-list">
+          <li><span class="mgs-rank-no">1</span><b>巷口修表摊的六十年</b><em>新人 · 阿禾</em></li>
+          <li><span class="mgs-rank-no">2</span><b>用一杯咖啡的时间看云</b><em>新人 · 慢慢</em></li>
+          <li><span class="mgs-rank-no">3</span><b>给旧相机换一张皮</b><em>新人 · 老陈</em></li>
+          <li><span class="mgs-rank-no">4</span><b>凌晨四点的菜市场</b><em>新人 · 小于</em></li>
+          <li><span class="mgs-rank-no">5</span><b>雨天窗边的阅读清单</b><em>新人 · 木木</em></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mgs-review-grid">
+      <div class="mgs-review">
+        <p>在蚂蚁磁力搜索找片单，最大的感受是「干净」。没有乱七八糟的推荐，搜索出来是什么就是什么，标签也写得实在。</p>
+        <div class="mgs-review-user">
+          <span class="mgs-avatar mgs-avatar-a">沉</span>
+          <span><b>沉舟</b><small>城市探索爱好者</small></span>
+        </div>
+      </div>
+      <div class="mgs-review">
+        <p>作为创作者，平台给我最大的帮助是审核反馈很具体，会告诉我是画质问题还是分类问题，不是一句「不通过」。</p>
+        <div class="mgs-review-user">
+          <span class="mgs-avatar mgs-avatar-b">禾</span>
+          <span><b>阿禾</b><small>新人创作者</small></span>
+        </div>
+      </div>
+      <div class="mgs-review">
+        <p>画质稳定这点真挺重要的，以前在别的站看老片子，一到暗部就糊成一片，这里的码率控制得不错。</p>
+        <div class="mgs-review-user">
+          <span class="mgs-avatar mgs-avatar-c">老</span>
+          <span><b>老陈</b><small>影像爱好者</small></span>
+        </div>
+      </div>
+      <div class="mgs-review">
+        <p>专题做得有想法，「城市影像计划」我从第一期追到现在，能看到不同人眼里同一座城市的样子。</p>
+        <div class="mgs-review-user">
+          <span class="mgs-avatar mgs-avatar-d">慢</span>
+          <span><b>慢慢</b><small>内容收藏者</small></span>
+        </div>
+      </div>
+      <div class="mgs-review">
+        <p>希望以后能加个「按拍摄设备筛选」，做器材研究的时候会方便很多，其他都挺顺手的。</p>
+        <div class="mgs-review-user">
+          <span class="mgs-avatar mgs-avatar-e">许</span>
+          <span><b>许工</b><small>器材评测者</small></span>
+        </div>
+      </div>
+      <div class="mgs-review">
+        <p>检索速度快，标签联想准。我搜「旧书店」能直接出来三座城市的记录片，这个体验确实省时间。</p>
+        <div class="mgs-review-user">
+          <span class="mgs-avatar mgs-avatar-f">四</span>
+          <span><b>四方</b><small>社区用户</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 企业动态 -->
+<section class="mgs-section" id="mgs-news">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Brand News</span>
+      <h2 class="mgs-h2">企业动态与官方发布</h2>
+      <p class="mgs-sub">关于蚂蚁磁力搜索的最新进展、规则调整与社区活动。</p>
+    </div>
+    <div class="mgs-news-grid" style="margin-bottom:30px;">
+      <div class="mgs-news">
+        <time datetime="2026-11-19">2026.11.19</time>
+        <h3>品牌索引库新增「城市影像」合辑 128 条</h3>
+        <p>本次更新覆盖 12 座城市，统一补充了拍摄地标与时长信息，检索页支持按地域筛选。</p>
+      </div>
+      <div class="mgs-news">
+        <time datetime="2026-11-12">2026.11.12</time>
+        <h3>创作者招募计划第 7 期报名开放</h3>
+        <p>面向生活记录、手作、城市探索三个方向，报名后 5 个工作日内给出评审反馈。</p>
+      </div>
+      <div class="mgs-news">
+        <time datetime="2026-11-05">2026.11.05</time>
+        <h3>高清片单页升级：三维筛选上线</h3>
+        <p>新增按地域、时长、题材组合筛选，减少翻页次数，移动端同步适配。</p>
+      </div>
+      <div class="mgs-news">
+        <time datetime="2026-10-28">2026.10.28</time>
+        <h3>「镜头背后」专题第三季开始征集</h3>
+        <p>鼓励创作者讲述一次失败或返工的拍摄经历，入选作品将获得首页焦点位推荐。</p>
+      </div>
+    </div>
+    <div class="mgs-partner-row">
+      <div class="mgs-partner">城市影像联盟</div>
+      <div class="mgs-partner">木作工坊联合体</div>
+      <div class="mgs-partner">独立影像资料馆</div>
+      <div class="mgs-partner">青年创作者计划</div>
+      <div class="mgs-partner">在地文化研究会</div>
+      <div class="mgs-partner">影像器材评测团</div>
+    </div>
+  </div>
+</section>
+
+<!-- 创作灵感 + FAQ -->
+<section class="mgs-section mgs-section-alt" id="mgs-faq">
+  <div class="mgs-wrap">
+    <div class="mgs-section-head">
+      <span class="mgs-eyebrow">Inspiration & Help</span>
+      <h2 class="mgs-h2">创作灵感与常见问题</h2>
+      <p class="mgs-sub">第一次投稿前，可以先看看这些建议与说明。</p>
+    </div>
+    <div class="mgs-topic-grid" style="margin-bottom:36px;">
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">灵感 01</span>
+        <h3>从一个具体动作开始</h3>
+        <p>与其拍「一天」，不如拍「洗碗」「系鞋带」这类具体动作，画面更容易成立。</p>
+      </div>
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">灵感 02</span>
+        <h3>给视频写一句检索句</h3>
+        <p>标题里放入地点、动作与时间，观众更容易通过检索找到你的作品。</p>
+      </div>
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">灵感 03</span>
+        <h3>保留一次失误</h3>
+        <p>不完美的镜头往往更有真实感，社区鼓励保留过程中的返工与修正。</p>
+      </div>
+      <div class="mgs-topic">
+        <span class="mgs-topic-idx">灵感 04</span>
+        <h3>剪辑先做减法</h3>
+        <p>一分钟里讲清一件事，比三分钟里塞五件事更有力量，节奏比转场重要。</p>
+      </div>
+    </div>
+    <div class="mgs-faq">
+      <details open>
+        <summary>如何向蚂蚁磁力搜索投稿自己的作品？</summary>
+        <p>进入「联系与投稿」板块，填写作品名称、时长、题材与来源说明，提交后我们会进行画质与版权校验，通常在 3 个工作日内反馈结果。</p>
+      </details>
+      <details>
+        <summary>平台对画质有什么具体要求？</summary>
+        <p>建议横屏 1080P 及以上，帧率不低于 25fps，音画同步。手机竖屏作品也可投稿，但会统一放在竖屏专区展示。</p>
+      </details>
+      <details>
+        <summary>为什么我的作品审核没有通过？</summary>
+        <p>常见原因包括来源说明不完整、画面存在明显压缩失真、或题材归类不准确。反馈里会注明具体原因，修改后可再次提交。</p>
+      </details>
+      <details>
+        <summary>创作者主页可以自定义吗？</summary>
+        <p>可以。作者主页支持填写擅长领域、个人简介与创作手记，作品会按更新时间自动排列，也可申请调整置顶顺序。</p>
+      </details>
+      <details>
+        <summary>专题企划如何参与？</summary>
+        <p>平台每季度发布专题征集方向，创作者可在投稿时勾选「参与专题」并选择对应企划，编辑部会优先审核匹配度高的作品。</p>
+      </details>
+      <details>
+        <summary>站内检索支持哪些筛选方式？</summary>
+        <p>目前支持按地域、时长、题材三个维度组合筛选，搜索结果会优先展示更新较近、画质较高的内容。</p>
+      </details>
+      <details>
+        <summary>遇到内容问题如何反馈？</summary>
+        <p>可在作品卡片上使用「反馈」入口，或通过页面底部的联系邮箱说明情况，我们会在 2 个工作日内处理。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 联系与投稿 -->
+<section class="mgs-section" id="mgs-contact">
+  <div class="mgs-wrap">
+    <div class="mgs-cta">
+      <div>
+        <span class="mgs-eyebrow">Join Us</span>
+        <h2>把你的画面，放进蚂蚁磁力搜索官网</h2>
+        <p>
+          无论你是刚拿起相机的新人，还是持续创作多年的作者，这里都欢迎你的作品。
+          通过投稿入口提交作品信息，我们会在审核后安排展示，并同步到对应的专题与创作者主页。
+        </p>
+      </div>
+      <div class="mgs-cta-acts">
+        <button class="mgs-btn mgs-btn-main" type="button" id="mgsSubmitBtn">前往投稿入口 →</button>
+        <button class="mgs-btn mgs-btn-ghost" type="button" id="mgsShareBtn" style="background:transparent;color:#e9eef3;border-color:rgba(255,255,255,.32);">分享本页给朋友</button>
+        <span class="mgs-cta-note">合作与投稿咨询：brand@antsearch-video.cn</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="mgs-footer">
+  <div class="mgs-wrap">
+    <div class="mgs-footer-grid">
+      <div>
+        <div class="mgs-footer-brand">
+          <span class="mgs-brand-mark">蚂</span>
+          <span class="mgs-brand-text" style="color:#fff;">
+            <b style="color:#fff;">蚂蚁磁力搜索</b>
+            <small style="color:#7f909d;">ANT SEARCH VIDEO</small>
+          </span>
+        </div>
+        <p>
+          蚂蚁磁力搜索官方网站，持续运营的影像内容品牌。我们专注于原创、正版、高清的内容生态建设，
+          为创作者与观众搭建值得信赖的检索与观看平台。
+        </p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#mgs-focus">焦点影像</a></li>
+          <li><a href="#mgs-topics">专题企划</a></li>
+          <li><a href="#mgs-creators">创作者矩阵</a></li>
+          <li><a href="#mgs-wall">社区作品墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#mgs-about">品牌解析</a></li>
+          <li><a href="#mgs-news">企业动态</a></li>
+          <li><a href="#mgs-faq">帮助中心</a></li>
+          <li><a href="#mgs-contact">联系与投稿</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <ul>
+          <li>品牌合作：brand@antsearch-video.cn</li>
+          <li>内容投稿：submit@antsearch-video.cn</li>
+          <li>反馈建议：help@antsearch-video.cn</li>
+          <li>工作时间：周一至周五 10:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mgs-footer-bottom">
+      <span>© 2026 蚂蚁磁力搜索官方网站 · 版权所有 · 持续运营中</span>
+      <span>
+        <a href="#mgs-home">回到首页</a> ·
+        <a href="#mgs-faq">使用帮助</a> ·
+        <a href="#mgs-contact">意见反馈</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="mgs-top-btn" id="mgsTopBtn" aria-label="回到顶部">↑</button>
+<div class="mgs-toast" id="mgsToast"></div>
+
+<!-- 作者信息弹窗 -->
+<div class="mgs-modal" id="mgsAuthorModal">
+  <div class="mgs-modal-box">
+    <button class="mgs-modal-close" type="button" data-mgs-close="mgsAuthorModal" aria-label="关闭">✕</button>
+    <div class="mgs-author-head">
+      <span class="mgs-avatar mgs-avatar-a" id="mgsAuthorAvatar">林</span>
+      <div>
+        <h3 id="mgsAuthorName">作者昵称</h3>
+        <small id="mgsAuthorRole">擅长领域</small>
+      </div>
+    </div>
+    <p class="mgs-author-desc" id="mgsAuthorDesc"></p>
+    <div class="mgs-creator-stats" style="justify-content:flex-start;gap:28px;margin-top:18px;">
+      <span><b id="mgsAuthorWorks">0</b>作品</span>
+      <span><b id="mgsAuthorFans">0</b>关注</span>
+    </div>
+    <div class="mgs-modal-acts">
+      <button class="mgs-btn mgs-btn-main" type="button" id="mgsAuthorFollow">关注该创作者</button>
+      <button class="mgs-btn mgs-btn-ghost" type="button" data-mgs-close="mgsAuthorModal">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿弹窗 -->
+<div class="mgs-modal" id="mgsSubmitModal">
+  <div class="mgs-modal-box">
+    <button class="mgs-modal-close" type="button" data-mgs-close="mgsSubmitModal" aria-label="关闭">✕</button>
+    <h3>作品投稿入口</h3>
+    <p style="font-size:13.5px;color:#3b4f63;margin-bottom:6px;">请填写基本信息，我们会进行画质与版权校验，3 个工作日内反馈。</p>
+    <label for="mgsSubmitTitle">作品名称</label>
+    <input type="text" id="mgsSubmitTitle" placeholder="例如：沿着地铁 3 号线，记录城市入夜">
+    <label for="mgsSubmitType">作品题材</label>
+    <select id="mgsSubmitType">
+      <option>城市探索</option>
+      <option>生活观察</option>
+      <option>手作纪实</option>
+      <option>深度测评</option>
+      <option>人物访谈</option>
+      <option>户外活动</option>
+      <option>音乐现场</option>
+    </select>
+    <label for="mgsSubmitContact">联系方式</label>
+    <input type="text" id="mgsSubmitContact" placeholder="邮箱或手机号，仅用于审核反馈">
+    <label for="mgsSubmitDesc">作品说明</label>
+    <textarea id="mgsSubmitDesc" rows="3" placeholder="简要说明拍摄地点、时长与来源"></textarea>
+    <div class="mgs-modal-acts">
+      <button class="mgs-btn mgs-btn-main" type="button" id="mgsSubmitConfirm">提交审核</button>
+      <button class="mgs-btn mgs-btn-ghost" type="button" data-mgs-close="mgsSubmitModal">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- 分享弹窗 -->
+<div class="mgs-modal" id="mgsShareModal">
+  <div class="mgs-modal-box">
+    <button class="mgs-modal-close" type="button" data-mgs-close="mgsShareModal" aria-label="关闭">✕</button>
+    <h3>分享蚂蚁磁力搜索官网</h3>
+    <p style="font-size:13.5px;color:#3b4f63;">选择一种方式，把这份内容分享给朋友。</p>
+    <div class="mgs-share-row">
+      <button type="button" data-mgs-share="微信">微信</button>
+      <button type="button" data-mgs-share="微博">微博</button>
+      <button type="button" data-mgs-share="QQ">QQ</button>
+      <button type="button" data-mgs-share="邮件">邮件</button>
+      <button type="button" id="mgsCopyLink">复制链接</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Toast */
+  var toastEl = document.getElementById('mgsToast');
+  var toastTimer = null;
+  function mgsToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('mgs-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove('mgs-show');
+    },2200);
+  }
+
+  /* 移动端导航 */
+  var navToggle = document.getElementById('mgsNavToggle');
+  var nav = document.getElementById('mgsNav');
+  navToggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('mgs-nav-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.textContent = open ? '✕' : '☰';
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('mgs-nav-open');
+      navToggle.setAttribute('aria-expanded','false');
+      navToggle.textContent = '☰';
+    }
+  });
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById('mgsSearchInput');
+  var searchBtn = document.getElementById('mgsSearchBtn');
+  var searchHint = document.getElementById('mgsSearchHint');
+  var keywordMap = [
+    {key:'城市', tip:'城市探索 · 已找到 42 个城市影像专题'},
+    {key:'生活', tip:'生活观察 · 精选 216 条日常记录作品'},
+    {key:'手作', tip:'手作纪实 · 木工、陶艺、皮具共 68 条'},
+    {key:'测评', tip:'深度测评 · 器材与场景评测 152 条'},
+    {key:'徒步', tip:'户外活动 · 近郊路线作品 39 条'},
+    {key:'厨房', tip:'美食烹饪 · 厨房日常系列 84 条'},
+    {key:'音乐', tip:'音乐现场 · 排练室与演出记录 57 条'},
+    {key:'访谈', tip:'人物访谈 · 创作者自述 88 条'}
+  ];
+  function doSearch(){
+    var v = searchInput.value.trim();
+    if(!v){
+      searchHint.textContent = '请输入片单名、创作者或题材关键词，例如「城市」「手作」。';
+      searchHint.classList.add('mgs-open');
+      return;
+    }
+    var hit = null;
+    for(var i=0;i<keywordMap.length;i++){
+      if(v.indexOf(keywordMap[i].key) > -1){ hit = keywordMap[i]; break; }
+    }
+    if(hit){
+      searchHint.textContent = '检索「' + v + '」：' + hit.tip;
+      mgsToast('检索完成：' + hit.tip);
+    }else{
+      searchHint.textContent = '暂未匹配到「' + v + '」的直接结果，建议尝试「城市」「手作」「生活」等关键词。';
+      mgsToast('暂未匹配到相关内容，换个关键词试试');
+    }
+    searchHint.classList.add('mgs-open');
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ doSearch(); }
+  });
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value.trim()){ searchHint.classList.remove('mgs-open'); }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.mgs-search')){ searchHint.classList.remove('mgs-open'); }
+  });
+
+  /* 点赞 & 收藏 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('.mgs-like');
+    if(likeBtn){
+      var n = parseInt(likeBtn.getAttribute('data-count'),10) || 0;
+      if(likeBtn.classList.contains('mgs-like-on')){
+        n = Math.max(0, n - 1);
+        likeBtn.classList.remove('mgs-like-on');
+        likeBtn.textContent = '♡ ' + n;
+      }else{
+        n = n + 1;
+        likeBtn.classList.add('mgs-like-on');
+        likeBtn.textContent = '♥ ' + n;
+        mgsToast('已点赞，感谢你的认可');
+      }
+      likeBtn.setAttribute('data-count', n);
+      return;
+    }
+    var favBtn = e.target.closest('.mgs-fav');
+    if(favBtn){
+      if(favBtn.classList.contains('mgs-fav-on')){
+        favBtn.classList.remove('mgs-fav-on');
+        favBtn.textContent = '☆ 收藏';
+      }else{
+        favBtn.classList.add('mgs-fav-on');
+        favBtn.textContent = '★ 已收藏';
+        mgsToast('已加入收藏，可在个人主页查看');
+      }
+    }
+  });
+
+  /* 作者弹窗 */
+  var authorModal = document.getElementById('mgsAuthorModal');
+  var authorAvatar = document.getElementById('mgsAuthorAvatar');
+  var authorName = document.getElementById('mgsAuthorName');
+  var authorRole = document.getElementById('mgsAuthorRole');
+  var authorDesc = document.getElementById('mgsAuthorDesc');
+  var authorWorks = document.getElementById('mgsAuthorWorks');
+  var authorFans = document.getElementById('mgsAuthorFans');
+  var authorFollow = document.getElementById('mgsAuthorFollow');
+
+  document.querySelectorAll('.mgs-author-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      authorName.textContent = btn.getAttribute('data-name');
+      authorRole.textContent = btn.getAttribute('data-role');
+      authorDesc.textContent = btn.getAttribute('data-desc');
+      authorWorks.textContent = btn.getAttribute('data-works');
+      authorFans.textContent = btn.getAttribute('data-fans');
+      authorAvatar.textContent = btn.getAttribute('data-avatar');
+      authorAvatar.className = 'mgs-avatar ' + btn.getAttribute('data-avatarcls');
+      authorFollow.textContent = '关注该创作者';
+      authorFollow.classList.remove('mgs-followed');
+      authorModal.classList.add('mgs-open');
+    });
+  });
+  authorFollow.addEventListener('click', function(){
+    if(authorFollow.classList.contains('mgs-followed')){
+      authorFollow.classList.remove('mgs-followed');
+      authorFollow.textContent = '关注该创作者';
+      mgsToast('已取消关注');
+    }else{
+      authorFollow.classList.add('mgs-followed');
+      authorFollow.textContent = '已关注 ✓';
+      mgsToast('关注成功，更新时会提醒你');
+    }
+  });
+
+  /* 弹窗关闭控制 */
+  document.querySelectorAll('[data-mgs-close]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-mgs-close');
+      document.getElementById(id).classList.remove('mgs-open');
+    });
+  });
+  document.querySelectorAll('.mgs-modal').forEach(function(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal){ modal.classList.remove('mgs-open'); }
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.mgs-modal.mgs-open').forEach(function(m){
+        m.classList.remove('mgs-open');
+      });
+    }
+  });
+
+  /* 投稿弹窗 */
+  var submitModal = document.getElementById('mgsSubmitModal');
+  document.getElementById('mgsSubmitBtn').addEventListener('click', function(){
+    submitModal.classList.add('mgs-open');
+  });
+  document.getElementById('mgsSubmitConfirm').addEventListener('click', function(){
+    var t = document.getElementById('mgsSubmitTitle').value.trim();
+    var c = document.getElementById('mgsSubmitContact').value.trim();
+    if(!t){
+      mgsToast('请先填写作品名称');
+      return;
+    }
+    if(!c){
+      mgsToast('请填写联系方式，便于审核反馈');
+      return;
+    }
+    submitModal.classList.remove('mgs-open');
+    mgsToast('投稿已提交，我们会在 3 个工作日内反馈');
+    document.getElementById('mgsSubmitTitle').value = '';
+    document.getElementById('mgsSubmitContact').value = '';
+    document.getElementById('mgsSubmitDesc').value = '';
+  });
+
+  /* 分享 */
+  var shareModal = document.getElementById('mgsShareModal');
+  document.getElementById('mgsShareBtn').addEventListener('click', function(){
+    shareModal.classList.add('mgs-open');
+  });
+  document.querySelectorAll('[data-mgs-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var ch = btn.getAttribute('data-mgs-share');
+      mgsToast('已生成分享卡片，可前往' + ch + '粘贴发送');
+      shareModal.classList.remove('mgs-open');
+    });
+  });
+  document.getElementById('mgsCopyLink').addEventListener('click', function(){
+    var url = window.location.href;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        mgsToast('链接已复制，可粘贴分享');
+      }).catch(function(){
+        mgsToast('复制失败，请手动复制地址栏链接');
+      });
+    }else{
+      mgsToast('当前环境不支持自动复制，请手动复制地址栏链接');
+    }
+    shareModal.classList.remove('mgs-open');
+  });
+
+  /* 影像墙点击 */
+  document.querySelectorAll('.mgs-wall-item').forEach(function(item){
+    item.addEventListener('click', function(){
+      mgsToast(item.getAttribute('data-label') || '已打开作品');
+    });
+  });
+
+  /* 数字滚动 */
+  var counters = document.querySelectorAll('[data-mgs-count]');
+  var counterDone = false;
+  function runCounters(){
+    if(counterDone) return;
+    counterDone = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-mgs-count'),10);
+      var start = 0;
+      var dur = 1200;
+      var t0 = null;
+      function step(ts){
+        if(!t0) t0 = ts;
+        var p = Math.min((ts - t0)/dur, 1);
+        var val = Math.floor(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+        el.textContent = val.toLocaleString('zh-CN');
+        if(p < 1){ requestAnimationFrame(step); }
+        else{ el.textContent = target.toLocaleString('zh-CN'); }
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var statsBox = document.querySelector('.mgs-hero-stats');
+  if('IntersectionObserver' in window && statsBox){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ runCounters(); io.disconnect(); }
+      });
+    },{threshold:.4});
+    io.observe(statsBox);
+  }else{
+    runCounters();
+  }
+
+  /* 同步数字轻微跳动 */
+  var syncNum = document.getElementById('mgsSyncNum');
+  if(syncNum){
+    var base = 38613;
+    setInterval(function(){
+      base += Math.floor(Math.random()*3) + 1;
+      syncNum.textContent = base;
+    }, 4200);
+  }
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById('mgsTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 420){ topBtn.classList.add('mgs-show'); }
+    else{ topBtn.classList.remove('mgs-show'); }
+  });
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  /* 导航高亮 */
+  var navLinks = document.querySelectorAll('.mgs-nav a');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href');
+    if(id && id.charAt(0) === '#'){
+      var sec = document.querySelector(id);
+      if(sec){ sections.push({link:a, sec:sec}); }
+    }
+  });
+  function updateNav(){
+    var pos = window.scrollY + 160;
+    var current = sections[0];
+    sections.forEach(function(s){
+      if(s.sec.offsetTop <= pos){ current = s; }
+    });
+    navLinks.forEach(function(a){ a.classList.remove('mgs-nav-on'); });
+    if(current){ current.link.classList.add('mgs-nav-on'); }
+  }
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+
+})();
+</script>
+</body>
+          </html>
